@@ -76,13 +76,25 @@ temporada = st.sidebar.selectbox("Temporada",anos)
 # Filtrar o DataFrame com base na seleção
 if temporada == "Todos":
     df_filtrado_anos = df_ligas_anos
+    ligas = df_ligas_anos["liga"].unique().tolist()
+    ligas.insert(0, "Todos")
+    ligas = st.sidebar.selectbox("Liga_Seleção", ligas)
+    if ligas == "Todos":
+        # df_filtrado_anos
+        pass
+    else:
+        df_filtrado_anos = df_ligas_anos[df_ligas_anos['liga'] == ligas]
+    #     df_filtrado_anos = df_ligas_anos[df_ligas_anos['temporada'] == temporada and df_liga_anos[df_liga_anos['liga'] == ligas]]
 else:
     df_filtrado_anos = df_ligas_anos[df_ligas_anos['temporada'] == temporada]
 
-# df_filtrado_anos = df_times_anos[df_times_anos['temporada_x'] == temporada]
-# st.write(df_filtrado_anos)
+    ligas = df_ligas_anos["liga"].unique()
+    # ligas.insert(0, "Todos")
+    ligas = st.sidebar.selectbox("Liga_Seleção", ligas)
+    df_filtrado_anos = df_filtrado_anos[df_filtrado_anos['liga'] == ligas]
 
 st.dataframe(df_filtrado_anos,
-            column_config={ 
-                "image_league": st.column_config.ImageColumn('Escudo'),
-             })
+    column_config={ 
+    "image_league": st.column_config.ImageColumn('Escudo'),
+    })
+    
