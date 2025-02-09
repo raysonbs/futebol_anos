@@ -11,9 +11,6 @@ st.set_page_config(
 
 st.markdown('# Análise de Ligas Por Temporada')
 
-# C:\Users\RAYSON\Streamlit_Backtesting\isrgrootx1.pem
-# isrgrootx1.pem
-
 # Função para carregar os dados do banco de dados
 def load_data():
     # Informações de conexão e caminho do certificado

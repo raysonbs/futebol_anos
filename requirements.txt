@@ -3,7 +3,6 @@ annotated-types==0.7.0
 asttokens==2.4.0
 attrs==23.1.0
 backcall==0.2.0
-beautifulsoup4 @ file:///C:/b/abs_0agyz1wsr4/croot/beautifulsoup4-split_1681493048687/work
 betterproto==2.0.0b6
 blinker==1.6.2
 cachetools==5.3.1
@@ -128,7 +127,6 @@ six==1.16.0
 smmap==5.0.0
 sniffio==1.3.0
 sortedcontainers==2.4.0
-soupsieve @ file:///C:/b/abs_bbsvy9t4pl/croot/soupsieve_1696347611357/work
 SQLAlchemy==2.0.22
 stack-data==0.6.3
 streamlit==1.41.1
