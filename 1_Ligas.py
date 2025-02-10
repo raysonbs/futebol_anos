@@ -98,5 +98,3 @@ st.dataframe(df_filtrado_anos,
     "image_league": st.column_config.ImageColumn('Escudo'),
     })
     
-
-st.write("rayson")
