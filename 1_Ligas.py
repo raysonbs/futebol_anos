@@ -23,7 +23,7 @@ if not os.path.exists(caminho_certificado_temp):
         response.raise_for_status()  # Verifica se o download foi bem-sucedido
         with open(caminho_certificado_temp, 'wb') as file:
             file.write(response.content)
-        # st.write("Certificado baixado com sucesso.")
+        st.write("Certificado baixado com sucesso.")
     except requests.exceptions.RequestException as e:
         st.error(f"Erro ao baixar o certificado: {e}")
         
@@ -33,7 +33,7 @@ def load_data():
     username = 'root'
     password = 'FomFAYykiMbEFBR15ahPbuPcPiaN1lq2'
     host = '3il9oh.stackhero-network.com'
-    port = 6454
+    port = os.getenv('port')
     database = 'BD_Anos_Consolidados'
 
     # Configurações SSL
