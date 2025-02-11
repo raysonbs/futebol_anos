@@ -2,6 +2,8 @@ import pandas as pd
 from sqlalchemy import create_engine
 import streamlit as st
 import time
+import os
+import requests
 
 st.set_page_config(
     page_title="Ligas",
@@ -11,6 +13,20 @@ st.set_page_config(
 
 st.markdown('# Análise de Ligas Por Temporada')
 
+url_certificado =  os.getenv('url') # Substitua pelo link correto
+
+caminho_certificado_temp = '/tmp/certificado.pem'
+
+if not os.path.exists(caminho_certificado_temp):
+    try:
+        response = requests.get(url_certificado)
+        response.raise_for_status()  # Verifica se o download foi bem-sucedido
+        with open(caminho_certificado_temp, 'wb') as file:
+            file.write(response.content)
+        # st.write("Certificado baixado com sucesso.")
+    except requests.exceptions.RequestException as e:
+        st.error(f"Erro ao baixar o certificado: {e}")
+        
 # Função para carregar os dados do banco de dados
 def load_data():
     # Informações de conexão e caminho do certificado
@@ -23,7 +39,7 @@ def load_data():
     # Configurações SSL
     ssl_args = {
         'ssl': {
-            'ca': 'isrgrootx1.pem'  # Certifique-se de que o caminho é válido
+            'ca': caminho_certificado_temp  # Certifique-se de que o caminho é válido
         }
     }
 
