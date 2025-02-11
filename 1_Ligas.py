@@ -30,11 +30,11 @@ if not os.path.exists(caminho_certificado_temp):
 # Função para carregar os dados do banco de dados
 def load_data():
     # Informações de conexão e caminho do certificado
-    username = 'root'
-    password = 'FomFAYykiMbEFBR15ahPbuPcPiaN1lq2'
-    host = '3il9oh.stackhero-network.com'
+    username = os.getenv('username')
+    password = os.getenv('password')
+    host = os.getenv('host')
     port = os.getenv('port')
-    database = 'BD_Anos_Consolidados'
+    database = os.getenv('database')
 
     # Configurações SSL
     ssl_args = {
