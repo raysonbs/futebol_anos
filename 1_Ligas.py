@@ -82,7 +82,7 @@ else:
     st.error("Os dados dos times não foram carregados.")
     
 
-anos = df_ligas_anos['temporada'].unique().tolist()
+anos = df_ligas_anos['Ano'].unique().tolist()
 anos.insert(0, "Todos")  # Adiciona a opção "Todos" no início da lista
 
 
@@ -92,25 +92,25 @@ temporada = st.sidebar.selectbox("Temporada",anos)
 # Filtrar o DataFrame com base na seleção
 if temporada == "Todos":
     df_filtrado_anos = df_ligas_anos
-    ligas = df_ligas_anos["liga"].unique().tolist()
+    ligas = df_ligas_anos["Campeonato"].unique().tolist()
     ligas.insert(0, "Todos")
     ligas = st.sidebar.selectbox("Liga_Seleção", ligas)
     if ligas == "Todos":
         # df_filtrado_anos
         pass
     else:
-        df_filtrado_anos = df_ligas_anos[df_ligas_anos['liga'] == ligas]
+        df_filtrado_anos = df_ligas_anos[df_ligas_anos['Campeonato'] == ligas]
     #     df_filtrado_anos = df_ligas_anos[df_ligas_anos['temporada'] == temporada and df_liga_anos[df_liga_anos['liga'] == ligas]]
 else:
-    df_filtrado_anos = df_ligas_anos[df_ligas_anos['temporada'] == temporada]
+    df_filtrado_anos = df_ligas_anos[df_ligas_anos['Ano'] == temporada]
 
-    ligas = df_ligas_anos["liga"].unique()
+    ligas = df_ligas_anos["Campeonato"].unique()
     # ligas.insert(0, "Todos")
     ligas = st.sidebar.selectbox("Liga_Seleção", ligas)
-    df_filtrado_anos = df_filtrado_anos[df_filtrado_anos['liga'] == ligas]
+    df_filtrado_anos = df_filtrado_anos[df_filtrado_anos['Campeonato'] == ligas]
 
 st.dataframe(df_filtrado_anos,
     column_config={ 
-    "image_league": st.column_config.ImageColumn('Escudo'),
+    "Time_image": st.column_config.ImageColumn('Escudo'),
     })
     
