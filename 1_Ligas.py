@@ -111,6 +111,6 @@ else:
 
 st.dataframe(df_filtrado_anos,
     column_config={ 
-    "imagem_league": st.column_config.ImageColumn('Escudo'),
+    "image_league": st.column_config.ImageColumn('Escudo'),
     })
     
