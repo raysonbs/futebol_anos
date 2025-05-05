@@ -45,12 +45,11 @@ else:
     times = st.sidebar.selectbox("Liga_Seleção", times)
     df_filtrado_anos = df_filtrado_anos[df_filtrado_anos['home_name'] == times]
 
-columns = ["temporada_x", "home_name",'imagem_time','Total_G__Marcados','Total_Jogos_C',
-           'Total_Jogos_05FT', '%Jogos05FT','Total_Jogos_15FT','%Jogos15FT',
-           'Total_Jogos_25FT','%Jogos25FT','Total_Jogos_35FT','%Jogos35FT']
+columns = ['Ano',"Tipo_Campeonato",'Campeonato',"Time",'Time_image','Total_Jogos',
+           '%_Over05FT','%_Over15FT','%_Over25FT','%_Over35FT']
 
 st.dataframe(df_filtrado_anos[columns],
     column_config={ 
-    "imagem_time": st.column_config.ImageColumn('Escudo'),
+    "Time_image": st.column_config.ImageColumn('Escudo'),
     })
  
