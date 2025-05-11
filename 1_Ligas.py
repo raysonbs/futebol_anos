@@ -113,4 +113,6 @@ st.dataframe(df_filtrado_anos,
     column_config={ 
     "image_league": st.column_config.ImageColumn('Escudo'),
     })
-    
+
+
+st.write("teste")
