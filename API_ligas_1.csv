@@ -1,4 +1,4 @@
-﻿Name;Value.name;Value.country;Value.league_name;Value.season.id;Value.season.year
+﻿Name;Value;country;league_name;seasonid;seasonyear
 data;USA MLS;USA;MLS;1;2016
 data;USA MLS;USA;MLS;16;2015
 data;USA MLS;USA;MLS;23;2014
