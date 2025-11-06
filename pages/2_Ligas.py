@@ -36,6 +36,8 @@ def load_data():
     port = os.getenv('port')
     database = os.getenv('database')
 
+
+
     # Configurações SSL
     ssl_args = {
         'ssl': {
